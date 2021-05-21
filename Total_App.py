@@ -17,14 +17,15 @@ def quit_main():
 def greenfield_application():
     #Function to get Greenfield card number input and download card
     def get_cards():
-        driver = webdriver.Chrome(r"C:\Users\Z0052V1\Documents\chromedriver.exe")
-        driver.get('https://greenfield.target.com/')
+        driver = webdriver.Chrome(#File Path to Chromedriver)
+        driver.get(#Web address for Target's Greenfield Website)
         time.sleep(20)
         list = card_entry.get()
         list = list.split(',')
     
         for i in list:
-            driver.get('https://greenfield.target.com/card/' + str(i))
+            driver.get(#Web address for Target's Greenfield website 
+                + str(i))
             time.sleep(9)
 
             drop_down_menu = driver.find_element_by_id('card-view-more')
