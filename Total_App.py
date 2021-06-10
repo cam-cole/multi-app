@@ -13,18 +13,18 @@ from random import randint
 def quit_main():
     main.destroy()
  
-#Function to create and run Greenfield Application
-def greenfield_application():
-    #Function to get Greenfield card number input and download card
+#Function to create and run Data Card Download Application
+def card_application():
+    #Function to get website card number input and download card
     def get_cards():
         driver = webdriver.Chrome(#File Path to Chromedriver)
-        driver.get(#Web address for Target's Greenfield Website)
+        driver.get(#Web address for Website)
         time.sleep(20)
         list = card_entry.get()
         list = list.split(',')
     
         for i in list:
-            driver.get(#Web address for Target's Greenfield website 
+            driver.get(#Web address for Website 
                 + str(i))
             time.sleep(9)
 
@@ -37,26 +37,26 @@ def greenfield_application():
         time.sleep(5)
         driver.close()
      
-    #Function to quit Greenfield Application
+    #Function to quit Data Card Download Application
     def quit():
-        greenfield_window.destroy()
+        card_window.destroy()
     
-    #Window Configuration for Greenfield Application
-    greenfield_window = tk.Tk()
-    greenfield_window.title("Greenfield Download App")
+    #Window Configuration for Data Card Download Application
+    card_window = tk.Tk()
+    card_window.title("Data Card Download App")
 
-    card_label = tk.Label(master = greenfield_window,text = 'Enter Card Numbers Below:', bg = 'black', fg = 'light green')
-    card_entry = tk.Entry(master = greenfield_window)
-    download_button = tk.Button(master = greenfield_window, text = 'Download Cards', bg = 'black', fg = 'light green', command = get_cards)
-    quit_button = tk.Button(master = greenfield_window, text = 'Quit', bg = 'black', fg = 'light green', command=quit)
+    card_label = tk.Label(master = card_window,text = 'Enter Card Numbers Below:', bg = 'black', fg = 'light green')
+    card_entry = tk.Entry(master = card_window)
+    download_button = tk.Button(master = card_window, text = 'Download Cards', bg = 'black', fg = 'light green', command = get_cards)
+    quit_button = tk.Button(master = card_window, text = 'Quit', bg = 'black', fg = 'light green', command=quit)
 
     card_label.grid(row = 0, column = 0, sticky = 'nsew')
     card_entry.grid(row = 1, column = 0, sticky = 'nsew')
     download_button.grid(row = 0, column = 1, sticky = 'nsew')
     quit_button.grid(row = 1, column = 1, sticky = 'nsew')
 
-    #Run Greenfield_Application
-    greenfield_window.mainloop()
+    #Run Data Card Download Application
+    card_window.mainloop()
 
 
 #Function to create and run Dice Roll Application
