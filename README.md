@@ -1,4 +1,4 @@
-# multi-app
+# multi_app
 Application with several different functions and tools. This was written in Python and uses the tkinter package as the GUI.
 
 
